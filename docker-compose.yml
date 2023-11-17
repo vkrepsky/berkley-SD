@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app1:
+    image: vwkrepsky/berkley-app
+    ports:
+      - "8081:8080"
+    environment:
+      - ID=1
+    networks:
+      - my_network
+
+  app2:
+    image: vwkrepsky/berkley-app
+    ports:
+      - "8082:8080"
+    environment:
+      - ID=2
+    networks:
+      - my_network
+
+  app3:
+    image: vwkrepsky/berkley-app
+    ports:
+      - "8083:8080"
+    environment:
+      - ID=3
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
